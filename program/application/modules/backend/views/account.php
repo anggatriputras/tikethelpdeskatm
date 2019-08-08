@@ -39,7 +39,7 @@
                                 <td><?=$r['username']?></td>
                                 <td><?php
                                       if ($r['role']==1) {
-                                        echo "Helpedesk";
+                                        echo "Helpdesk";
                                       } elseif ($r['role']==2) {
                                         echo "Company";
                                       } else {

@@ -36,6 +36,7 @@
                             <th>Status</th>
                             <th>Keterangan</th>
                             <th>Images</th>
+                            <th>Start Date</th>
                             <th>End Date</th>
                             <th>Created</th>
                             <th>Action</th>
@@ -71,7 +72,8 @@
                                     <?php } ?>
                                 </td>
 
-                                <td><?=format_date($r['end_date'] == "0000-00-00" ? "": $r['end_date'] ,'F d, Y')?></td>
+                                <td><?=format_date($r['start_date'] == "0000-00-00" ? "": $r['start_date'] ,'H:i F d, Y')?></td>
+                                <td><?=format_date($r['end_date'] == "0000-00-00" ? "": $r['end_date'] ,'H:i F d, Y')?></td>
                                 <td><?=format_date($r['created'],'F d, Y')?></td>
                                 <td>
                                     <!-- <a class="btn" href=""> Preview</a> -->

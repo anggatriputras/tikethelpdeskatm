@@ -102,8 +102,8 @@
                                     <?php } ?>
                                 </td>
                                 <td><?=$r['keterangan']?></td>
-                                <td><?=format_date($r['start_date'] == "0000-00-00" ? "": $r['start_date'] ,'F d, Y')?></td>
-                                <td><?=format_date($r['end_date'] == "0000-00-00" ? "": $r['end_date'] ,'F d, Y')?></td>
+                                <td><?=format_date($r['start_date'] == "0000-00-00" ? "": $r['start_date'] ,'h:m F d, Y')?></td>
+                                <td><?=format_date($r['end_date'] == "0000-00-00" ? "": $r['end_date'] ,'h:m F d, Y')?></td>
                                 <td><?=format_date($r['created'],'F d, Y')?></td>
                             </tr>
                         <?php }?>

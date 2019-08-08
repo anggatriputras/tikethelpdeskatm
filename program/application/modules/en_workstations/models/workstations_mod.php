@@ -52,7 +52,11 @@ class Workstations_mod extends CI_Model {
         if(user_role_en() == xml('role_com')){
           $this->db->where_in('id_company', user_id_en());
         }
-        
+
+        if(user_role_en() == xml('role_eng')){
+          $this->db->where_in('id_enginer', user_id_en());
+        }
+
         $this->db->join('ds_machine_atm', 'ds_workstations.id_machine_atm = ds_machine_atm.id','left');
         $this->db->join('ds_users', 'ds_workstations.id_enginer = ds_users.id','left');
         $i = $this->db->get('ds_workstations');

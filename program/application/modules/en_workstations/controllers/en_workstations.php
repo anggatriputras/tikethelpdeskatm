@@ -132,13 +132,13 @@ class En_workstations extends Backend_Core {
           // $sort = $this->input->post('sort');
           // $is_active = $this->input->post("is_active");
           // $is_active = ($is_active == 'on') ? 1 : 0;
-
+          date_default_timezone_set('Asia/Jakarta');
             $update_data = array(
               'id_machine_atm' => $id_machine_atm,
               'id_enginer' => $id_enginer,
               'keterangan' => $keterangan,
               'status' => "completed",
-              'end_date' => date_now(true),
+              'end_date' => date("Y-m-d H:i:s"),
               // 'created_by' => user_id_en()
             );
 
@@ -242,10 +242,10 @@ class En_workstations extends Backend_Core {
       if(!$row){
           redirect(cms_url(FALSE).'workstations');
       }
-
+      date_default_timezone_set('Asia/Jakarta');
       $update_data = array(
         'status' => "in progress",
-        'start_date' => date_now(true),
+        'start_date' => date("Y-m-d H:i:s"),
         'date_proses' => date_now(true),
       );
 
@@ -259,10 +259,11 @@ class En_workstations extends Backend_Core {
       if(!$row){
           redirect(cms_url(FALSE).'workstations');
       }
-
+      date_default_timezone_set('Asia/Jakarta');
+      
       $update_data = array(
         'status' => "completed",
-        'end_date' => date_now(true),
+        'end_date' => date("Y-m-d H:i:s"),
       );
 
       $this->workstations_mod->update($update_data,$row->id);
